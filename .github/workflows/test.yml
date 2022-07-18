@@ -46,7 +46,7 @@ jobs:
 
       - name: Test the actual console version here
         run: |
-          composer require symfony/console:${{ matrix.console-version }}
+          composer require symfony/yaml:${{ matrix.console-version }} symfony/console:${{ matrix.console-version }} --with-all-dependencies
 
       - name: Run tests
         run: composer test
