@@ -21,6 +21,10 @@ jobs:
         console-version:
           - "^3.4"
           - "^4"
+        exclude:
+          # Console 4 requires at least PHP 7.1.
+          - php-version: 7.0
+            console-version: "^4"
     steps:
       - name: Dump matrix context
         env:
@@ -45,7 +49,6 @@ jobs:
         run: composer --verbose install
 
       - name: Test the actual console version here
-        if: ${{ (matrix.console-version != '^4' || matrix.php-version != '7.0') }}
         run: |
           composer require symfony/yaml:${{ matrix.console-version }} symfony/console:${{ matrix.console-version }} --with-all-dependencies
 
