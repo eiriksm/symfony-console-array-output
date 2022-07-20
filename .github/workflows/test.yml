@@ -21,6 +21,9 @@ jobs:
         console-version:
           - "^3.4"
           - "^4"
+        exclude:
+          - php-version: 7.0
+            console-version: "^4"
     steps:
       - name: Dump matrix context
         env:
