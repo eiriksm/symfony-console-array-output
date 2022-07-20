@@ -22,6 +22,7 @@ jobs:
           - "^3.4"
           - "^4"
         exclude:
+          # Console 4 requires at least PHP 7.1.
           - php-version: 7.0
             console-version: "^4"
     steps:
