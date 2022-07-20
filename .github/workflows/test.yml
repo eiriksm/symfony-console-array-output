@@ -45,7 +45,6 @@ jobs:
         run: composer --verbose install
 
       - name: Test the actual console version here
-        if: ${{ (matrix.console-version != '^4' || matrix.php-version != '7.0') }}
         run: |
           composer require symfony/yaml:${{ matrix.console-version }} symfony/console:${{ matrix.console-version }} --with-all-dependencies
 
